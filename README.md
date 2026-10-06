@@ -16,9 +16,9 @@ A biztonsági naplófájlok manuális ellenőrzése a keletkező hatalmas adatme
 
 ## 🚀 Főbb Funkciók
 
-  1. Syslog & PAM Parser: Feldolgozza a Linux rendszerüzeneteket, kinyeri a folyamatok nevét, a célzott felhasználókat, a forrás IP-címeket/hosztneveket és a biztonsági eseménytípusokat.
+  1. **Syslog & PAM Parser:** Feldolgozza a Linux rendszerüzeneteket, kinyeri a folyamatok nevét, a célzott felhasználókat, a forrás IP-címeket/hosztneveket és a biztonsági eseménytípusokat.
 
-  2. Szabályalapú Fenyegetéselemzés:
+  2. **Szabályalapú Fenyegetéselemzés:**
 
       - SSH_BRUTE_FORCE: Legalább 5 sikertelen hitelesítési kísérlet 2 percen belül ugyanarról a forrásról.
 
@@ -26,13 +26,13 @@ A biztonsági naplófájlok manuális ellenőrzése a keletkező hatalmas adatme
       
       - BUFFER_OVERFLOW_EXPLOIT: Formátumsztring vagy shellcode támadási kísérletek felismerése (pl. rpc.statd).
 
-  3. Felügyelet Nélküli Gépi Tanulás (Isolation Forest):
+  3. **Felügyelet Nélküli Gépi Tanulás (Isolation Forest):**
 
       - Forrás IP-nkénti jellemzők kinyerése: kérések száma, hibaarány, megcélzott felhasználók és szolgáltatások diverzitása.
       
       - Automatikus viselkedés-szeparálás skálázott feature-vektorok alapján (StandardScaler).
       
-  4. Interaktív Dashboard:
+  4. **Interaktív Dashboard:**
       
       - Események arányának tortadiagramja és óránkénti forgalmi görbe (Plotly).
       
