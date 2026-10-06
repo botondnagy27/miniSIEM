@@ -38,3 +38,39 @@ A rendszer négy fő rétegből áll:
           ├── Forgalmi KPI-k és idősoros diagramok
           ├── Súlyozott riasztási lista és szűrők
           └── Források szórásdiagramja (Scatter Plot)
+```
+
+## 🛠️ Telepítés és Futtatás
+
+### 1.Előfeltételek
+  1. Python 3.10 vagy újabb verzió
+  2. git verziókövető
+
+### 2. Repository klónozása
+  ```text
+git clone https://github.com/botondnagy27/miniSIEM.git
+cd miniSIEM
+```
+
+### 3. Függőségek telepítése
+  ```text
+pip install -r requirements.txt
+```
+
+### 4. Modulok külön futtatása
+  ```text
+# Parser tesztelése:
+python src/parser.py
+
+# Szabályalapú vizsgálat:
+python src/detector.py
+
+# Gépi tanulási anomáliakeresés:
+python src/ml_detector.py
+```
+### 5. Webes Dashboard indítása
+  ```text
+cd src
+streamlit run app.py
+```
+A parancs lefutása után az alkalmazás automatikusan megnyílik a böngészőben a http://localhost:8501 címen.
