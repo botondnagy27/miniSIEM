@@ -28,4 +28,13 @@ Módosítások:
 Modulintegráció: Mi kötöttük össze az app.py-t a parser.py, detector.py és ml_detector.py modulokkal.
 Fájlkezelés és gyorsítótár: Beépítettük a fájlfeltöltést és a teljesítményoptimalizálást.
 Interaktív szűrők: Megírtuk a súlyosság szerinti szűrést és az ML küszöbérték-csúszkát
-
+ml_detector.py- gépi tanulás anomáliadetektor
+Használt ai-eszköz: ChatGPT / Claude
+Algoritmusválasztás és a Scikit-Learn alapú modell vázának elkészítésére használtuk
+Fontosabb promptok:
+"Milyen unsupervised algoritmust ajánlasz IP-alapú log-anomáliákhoz, és miért?"
+"Írj egy Python kódot, ami StandardScaler-t és Isolation Forestet használ a feature-ökön."   
+Kapott eredmény: Az AI az Isolation Forest algoritmust javasolta, mivel a biztonsági logokban a ritka anomáliák (támadások) kiszűrésére ez a leghatékonyabb tanító adatok nélkül, emellett megkaptuk az alapfüggvényeket is.  
+Ellenőrzés és módosítások:
+Beállítottuk a contamination paramétert $0.08$-ra a valós logok alapján.  
+Beletettünk egy ellenőrzést, hogy kevés adat (kevesebb minr 5 sor) esetén ne dobjon vissza hibát a kód
