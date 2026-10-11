@@ -16,5 +16,16 @@ Módosítások:
 Küszöbértékek finomhangolása: Mi határoztuk meg a konkrét riasztási küszöböket pl SSH 5 hiba/2 perc,FTP flood: 10 kapcsolat/1 perc,Exploit: azonnali kritikus.
 Riasztási duplikáció szűrése: Egyedi logikát írtunk, hogy ugyanarra az IP-címre percenként ne dobljon tucatnyi egyforma riasztást.
 Kontextus bővítése: Kiegészítettük a kódot a célzott felhasználónevek kinyerésével, hogy a riasztás részleteinél a megtámadott fiók is látszódjon.
-
+app.py - Webes felület 
+UI szerkezet és az interaktív Plotly grafikonok kódjának elkészítésére használtunk chatgpt-t
+Fontosabb promptok:
+"Adj egy 3 fülből álló Streamlit dashboard vázat KPI kártyákkal és oldalsávval."
+"Írj Plotly kódot az események kördiagramjához és az ML anomáliák scatter plotjához."
+Eredmények:
+Alapvető Streamlit felépítés (st.tabs, st.columns, st.sidebar)   
+Működő Plotly diagram-kódok (px.pie, px.scatter).
+Módosítások:
+Modulintegráció: Mi kötöttük össze az app.py-t a parser.py, detector.py és ml_detector.py modulokkal.
+Fájlkezelés és gyorsítótár: Beépítettük a fájlfeltöltést és a teljesítményoptimalizálást.
+Interaktív szűrők: Megírtuk a súlyosság szerinti szűrést és az ML küszöbérték-csúszkát
 
