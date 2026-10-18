@@ -76,3 +76,27 @@ def detect_rule_based_threats(df: pd.DataFrame) -> pd.DataFrame:
     if not alerts_df.empty:
         alerts_df = alerts_df.sort_values(by='timestamp').reset_index(drop=True)
     return alerts_df
+
+
+
+if __name__ == '__main__':
+    from parser import parse_linux_log
+
+    log_path = "Linux.log"
+    print(f"Naplófájl beolvasása: {log_path}...")
+    df_logs = parse_linux_log(log_path)
+    
+    print(f"Összes esemény: {len(df_logs)}")
+    print("Szabályalapú vizsgálat futtatása...")
+    
+    threats_df = detect_rule_based_threats(df_logs)
+    
+    print(f"\nTalált riasztások száma: {len(threats_df)}\n")
+    print("Riasztások típus szerint:")
+    print(threats_df['rule_name'].value_counts())
+    
+    print("\nSúlyosság szerinti megoszlás:")
+    print(threats_df['severity'].value_counts())
+    
+    print("\nElső 10 generált riasztás:")
+    print(threats_df[['timestamp', 'severity', 'rule_name', 'source', 'details']]
