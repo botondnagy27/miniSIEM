@@ -1,3 +1,12 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+# Korábban megírt modulok importálása
+from parser import parse_linux_log
+from detector import detect_rule_based_threats
+from ml_detector import extract_ip_features, train_and_detect_anomalies
+
 # Fájl betöltése (vagy a helyi Linux.log használata alapértelmezettként)
 @st.cache_data
 def load_data(file):
