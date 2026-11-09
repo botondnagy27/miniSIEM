@@ -7,6 +7,21 @@ from parser import parse_linux_log
 from detector import detect_rule_based_threats
 from ml_detector import extract_ip_features, train_and_detect_anomalies
 
+# Oldalbeállítások
+st.set_page_config(
+    page_title="Mini-SIEM Log Elemző",
+    page_icon="🛡️",
+    layout="wide"
+)
+
+st.title("🛡️️ Mini-SIEM Biztonsági Logelemző & Anomáliadetektor")
+st.markdown("Szabályalapú és Gépi Tanulási (Isolation Forest) fenyegetéselemzés Linux naplófájlokon.")
+
+# Oldalsáv
+st.sidebar.header("⚙️ Beállítások")
+uploaded_file = st.sidebar.file_uploader("Tölts fel egy Linux logfájlt (.log, .txt)", type=["log", "txt"])
+contamination = st.sidebar.slider("ML Anomália küszöb (Contamination)", min_value=0.01, max_value=0.20, value=0.08, step=0.01)
+
 # Fájl betöltése (vagy a helyi Linux.log használata alapértelmezettként)
 @st.cache_data
 def load_data(file):
